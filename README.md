@@ -23,5 +23,8 @@ The following search algorithms are implemented:
 
 ## Unit and coverage testing
 
+![image](https://github.com/user-attachments/assets/37809c32-9b87-4d27-befe-4f8633224044)
 
 ## Test and visualization
+
+![image](https://github.com/user-attachments/assets/26445abf-2943-4f11-96b0-9eb9754d1629)
