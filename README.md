@@ -26,5 +26,9 @@ The following search algorithms are implemented:
 ![image](https://github.com/user-attachments/assets/37809c32-9b87-4d27-befe-4f8633224044)
 
 ## Test and visualization
-
+Where the target is the middle element:
 ![image](https://github.com/user-attachments/assets/26445abf-2943-4f11-96b0-9eb9754d1629)
+
+Where the target is a random element:
+![image](https://github.com/user-attachments/assets/8f3de369-19af-4606-aedd-ae1ee8b24e93)
+
