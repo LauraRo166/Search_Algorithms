@@ -1,4 +1,5 @@
 import pandas as pd
+import sys
 import matplotlib.pyplot as plt
 from utils.execution_time_gathering import gather_execution_times
 
@@ -26,7 +27,12 @@ def main():
     max_size = 1_000_000
     step = 50_000
     samples_per_size = 10
+
     df = gather_execution_times(min_size, max_size, step, samples_per_size)
+
+    print("Size | Linear Search | Binary Search | Ternary Search")
+    for _, row in df.iterrows():
+        print(f"{int(row['Size'])} | {row['Linear Search']:.6f} | {row['Binary Search']:.6f} | {row['Ternary Search']:.6f}")
     plot_execution_times(df)
 
 if __name__ == '__main__':

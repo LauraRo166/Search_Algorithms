@@ -1,5 +1,6 @@
 import time
 import pandas as pd
+import random
 from algorithms.linearSearch import linearSearch
 from algorithms.binarySearch import binarySearch
 from algorithms.ternarySearch import ternarySearch
@@ -13,7 +14,7 @@ def measure_execution_time(algorithm, data):
     :param data: Ordered list in which the element will be searched.
     :return: Execution time in seconds.
     """
-    target = data[len(data) // 2]
+    target = random.choice(data)
     start_time = time.time()
     algorithm(data, target)
     return time.time() - start_time
