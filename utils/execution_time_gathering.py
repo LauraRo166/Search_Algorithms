@@ -7,32 +7,32 @@ from data_generator.sorted_array_generator import get_sorted_list
 
 def measure_execution_time(algorithm, data):
     """
-    Mide el tiempo de ejecución de un algoritmo de búsqueda.
+    Measures the execution time of a search algorithm.
 
-    :param algorithm: Función de búsqueda.
-    :param data: Lista ordenada en la que se buscará el elemento.
-    :return: Tiempo de ejecución en segundos.
+    :param algorithm: Search function.
+    :param data: Ordered list in which the element will be searched.
+    :return: Execution time in seconds.
     """
-    target = data[len(data) // 2]  # Buscar el elemento del medio
+    target = data[len(data) // 2]
     start_time = time.time()
     algorithm(data, target)
     return time.time() - start_time
 
 def gather_execution_times(min_size, max_size, step, samples_per_size):
     """
-    Recolecta tiempos de ejecución para listas de búsqueda de diferentes tamaños.
+    Collects execution times for search lists of different sizes.
 
-    :param min_size: Tamaño mínimo de la lista.
-    :param max_size: Tamaño máximo de la lista.
-    :param step: Tamaño del incremento.
-    :param samples_per_size: Número de muestras por tamaño.
-    :return: DataFrame con tiempos de ejecución.
+    :param min_size: Minimum list size.
+    :param max_size: Maximum list size.
+    :param step: Size of the increment.
+    :param samples_per_size: Number of samples per size.
+    :return: DataFrame with execution times.
     """
     results = []
 
     for size in range(min_size, max_size + 1, step):
         for _ in range(samples_per_size):
-            data = get_sorted_list(size)  # Lista ordenada
+            data = get_sorted_list(size)
             results.append({
                 'Size': size,
                 'Linear Search': measure_execution_time(linearSearch, data),
