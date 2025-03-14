@@ -14,9 +14,9 @@ def measure_execution_time(algorithm, data):
     :param data: Ordered list in which the element will be searched.
     :return: Execution time in seconds.
     """
-    target = random.choice(data)
+
     start_time = time.time()
-    algorithm(data, target)
+    algorithm(data, -1)
     return time.time() - start_time
 
 def gather_execution_times(min_size, max_size, step, samples_per_size):
@@ -32,13 +32,18 @@ def gather_execution_times(min_size, max_size, step, samples_per_size):
     results = []
 
     for size in range(min_size, max_size + 1, step):
+        print ("Generating " + str(size))
+        times1 = []
+        times2 = []
         for _ in range(samples_per_size):
-            data = get_sorted_list(size)
-            results.append({
-                'Size': size,
-                'Linear Search': measure_execution_time(linearSearch, data),
-                'Binary Search': measure_execution_time(binarySearch, data),
-                'Ternary Search': measure_execution_time(ternarySearch, data),
-            })
+            times1.append(measure_execution_time(binarySearch, get_sorted_list(size)))
+            times2.append(measure_execution_time(ternarySearch, get_sorted_list(size)))
+        times1.sort()
+        times2.sort()
+        results.append({
+            'Size': size,
+            'Binary Search': times1[samples_per_size//2],
+            'Ternary Search': times2[samples_per_size//2],
+        })
 
     return pd.DataFrame(results).groupby("Size", as_index=False).mean()
