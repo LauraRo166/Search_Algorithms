@@ -27,5 +27,8 @@ The following search algorithms are implemented:
 
 ## Test and visualization
 Binary and Ternary search:
+![image](https://github.com/user-attachments/assets/4acdf5b3-8a00-43a6-855f-ac11da6b9377)
+![image](https://github.com/user-attachments/assets/fa480d26-d6d1-4d04-93de-bc173325932a)
+
 
 
